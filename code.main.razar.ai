@@ -1,0 +1,25 @@
+def generate_square_image(size):
+    """
+    This function generates a square image based on the input size.
+    
+    Parameters:
+    size (int): The size of the square image
+    
+    Returns:
+    None
+    """
+    try:
+        # Check if the size is a positive integer
+        if not isinstance(size, int) or size <= 0:
+            raise ValueError("Size must be a positive integer")
+        
+        # Create a square image with the specified size
+        image = [[0] * size for _ in range(size)]
+        
+        # Display the image
+        plt.imshow(image, cmap='gray')
+        plt.axis('off')
+        plt.show()
+    except ValueError as e:
+        # Log the error
+        print(f"Error: {e}")
