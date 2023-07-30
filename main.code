@@ -1,0 +1,32 @@
+def respond_to_message(message):
+    """
+    This function takes a message as input and responds accordingly.
+    
+    Parameters:
+    message (str): The message to be responded to
+    
+    Returns:
+    str: The response to the message
+    """
+    try:
+        # Check if the message is a string
+        if not isinstance(message, str):
+            raise TypeError("Message must be a string")
+        
+        # Define the possible responses
+        responses = {
+            "hello": "Hello!",
+            "how are you?": "I'm good, thank you!",
+            "goodbye": "Goodbye!",
+            "thank you": "You're welcome!"
+        }
+        
+        # Check if the message is in the responses dictionary
+        if message.lower() in responses:
+            return responses[message.lower()]
+        else:
+            return "I'm sorry, I don't understand that message."
+    except TypeError as e:
+        # Log the error
+        print(f"Error: {e}")
+        return "An error occurred while processing the message."
