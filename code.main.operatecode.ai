@@ -1,0 +1,33 @@
+import sys
+import traceback
+
+def check_and_restart():
+    """
+    This function checks if there is an error in the console and restarts the script if an error is found.
+    """
+    try:
+        # Check if there is an error in the console
+        if sys.exc_info()[0] is not None:
+            print("Error detected. Restarting the script...")
+            
+            # Restart the script by calling the main function again
+            main()
+        else:
+            print("No error detected.")
+    except:
+        # Log any exception that occurs during the error checking process
+        print("An error occurred while checking for errors.")
+        traceback.print_exc()
+
+def main():
+    """
+    The main function of the script.
+    """
+    # Your script code goes here
+    # ...
+    
+    # Call the function to check for errors and restart if necessary
+    check_and_restart()
+
+# Call the main function to start the script
+main()
